@@ -47,3 +47,44 @@ export function mapSongRow(row: SongRow): Song {
     },
   };
 }
+
+/** 상세용 곡 — 목록 필드 + 부가 정보. */
+export type SongDetail = Song & {
+  eagateSongNo: string;
+  version: number | null;
+  durationSeconds: number | null;
+  minBpm: number | null;
+  avgBpm: number | null;
+  maxBpm: number | null;
+  category: string | null;
+  createdAt: string;
+  updatedAt: string;
+};
+
+/** Supabase `songs` 전체 행. */
+export type SongDetailRow = SongRow & {
+  eagate_song_no: string;
+  version: number | null;
+  duration_seconds: number | null;
+  min_bpm: number | null;
+  avg_bpm: number | null;
+  max_bpm: number | null;
+  category: string | null;
+  created_at: string;
+  updated_at: string;
+};
+
+export function mapSongDetailRow(row: SongDetailRow): SongDetail {
+  return {
+    ...mapSongRow(row),
+    eagateSongNo: row.eagate_song_no,
+    version: row.version,
+    durationSeconds: row.duration_seconds,
+    minBpm: row.min_bpm,
+    avgBpm: row.avg_bpm,
+    maxBpm: row.max_bpm,
+    category: row.category,
+    createdAt: row.created_at,
+    updatedAt: row.updated_at,
+  };
+}

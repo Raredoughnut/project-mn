@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import { Search } from "lucide-react";
 import { useVirtualizer } from "@tanstack/react-virtual";
 
@@ -96,7 +97,9 @@ export function ChartsView() {
                   className="absolute left-0 top-0 w-full pb-2"
                   style={{ transform: `translateY(${vi.start}px)` }}
                 >
-                  <SongItem song={song} />
+                  <Link href={`/charts/${song.id}`} className="block">
+                    <SongItem song={song} />
+                  </Link>
                 </div>
               );
             })}

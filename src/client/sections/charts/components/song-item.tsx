@@ -1,20 +1,13 @@
 import { Music } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import type { Difficulty, Song } from "@/src/client/sections/charts/types";
+import type { Song } from "@/src/client/sections/charts/types";
 import { DIFFICULTY_ORDER } from "@/src/client/sections/charts/types";
-
-/** 난이도별 라벨·색 (E=초록 · N=주황 · H=빨강 · EX=보라). */
-const DIFF_META: Record<Difficulty, { label: string; className: string }> = {
-  E: { label: "L", className: "bg-blue-lighter text-blue-darker" },
-  N: { label: "N", className: "bg-green-lighter text-green-darker" },
-  H: { label: "H", className: "bg-orange-lighter text-orange-darker" },
-  EX: { label: "EX", className: "bg-red-lighter text-red-darker" },
-};
+import { DIFF_META } from "@/src/client/sections/charts/difficulty";
 
 export function SongItem({ song }: { song: Song }) {
   return (
-    <div className="flex items-center gap-3 rounded-xl border border-border bg-card p-3">
+    <div className="flex items-center gap-3 rounded-xl border border-border bg-card p-3 transition-colors hover:border-primary/50 hover:bg-secondary">
       {/* 배너 (4.1:1) */}
       <div className="flex aspect-[4.1/1] w-32 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border bg-secondary sm:w-44">
         {song.imageUrl ? (
