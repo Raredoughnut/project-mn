@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { SiteHeader } from "@/src/client/layouts/site-header";
+import QueryProvider from "@/src/components/query-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,8 +49,10 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col">
-        <SiteHeader />
-        {children}
+        <QueryProvider>
+          <SiteHeader />
+          {children}
+        </QueryProvider>
       </body>
     </html>
   );
