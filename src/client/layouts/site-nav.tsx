@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Music, Users, Sparkles, type LucideIcon } from "lucide-react";
+import { Music, Smile, Users, Sparkles, type LucideIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -14,6 +14,7 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { href: "/charts", label: "악곡", Icon: Music },
+  { href: "/characters", label: "캐릭터", Icon: Smile },
   { href: "/users", label: "유저", Icon: Users },
   { href: "/recommend", label: "추천", Icon: Sparkles },
 ];
