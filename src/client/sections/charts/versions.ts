@@ -32,7 +32,7 @@ const VERSION_NAMES: Record<number, string> = {
   26: "pop'n music 解明リドルズ",
   27: "pop'n music UniLab",
   28: "pop'n music Jam&Fizz",
-  29: "pop'n music Jam&Fizz",
+  29: "pop'n music High☆Cheers!!",
   99: "기타",
 };
 
